@@ -10,6 +10,7 @@ djangorestframework-simplejwt # Auth: Estándar seguro para frontends desacoplad
 python-decouple              # Lectura de variables .env
 psycopg2-binary              # Driver de PostgreSQL
 dj-database-url              # Parsea la URL de la base de datos de Neon
+python-dotenv
 
 # --- Servidor & Estáticos en Producción ---
 gunicorn                     # Servidor WSGI para despliegue
