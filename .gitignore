@@ -1,0 +1,64 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# --- Python & Bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Entornos Virtuales ---
+env/
+venv/
+.venv/
+.env_wrappers/
+
+# --- Django ---
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# --- Archivos Estáticos y Media ---
+# 'media' contiene subidas de usuarios (no versionar)
+media/
+# 'staticfiles' es el output de collectstatic (se genera en deploy)
+staticfiles/
+static_root/
+
+# --- Variables de Entorno (SEGURIDAD CRÍTICA) ---
+.env
+.env.local
+.env.production
+
+# --- IDEs & OS ---
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- Testing & Coverage ---
+.coverage
+htmlcov/

@@ -1,0 +1,28 @@
+---
+import DynamicIcon from "./DynamicIcon";
+
+interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+
+const socialNetworks = [
+  { name: "Linkedin", icon: "Linkedin", href: "#" },
+  { name: "Github", icon: "Github", href: "#" },
+];
+---
+
+<div class={`flex items-center gap-4 ${className}`}>
+  {
+    socialNetworks.map((social) => (
+      <a
+        href={social.href}
+        aria-label={social.name}
+        class="text-color-text hover:text-gold transition-colors duration-200"
+      >
+        <DynamicIcon icon={social.icon} size="lg" client:load />
+      </a>
+    ))
+  }
+</div>

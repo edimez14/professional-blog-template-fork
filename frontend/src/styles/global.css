@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. Definimos los COLORES personalizados aquí */
+  /* Esto crea automáticamente bg-gold, text-gold, border-gold, etc. */
+  --color-gold: #d4af37;
+
+  /* Para tus variables de sistema (bg, surface, text) */
+  /* Nota: en v4, para que la clase sea 'bg-color-bg', la variable debe llamarse '--color-color-bg' */
+  --color-color-bg: #1c1c1e;
+  --color-color-surface: #171717;
+  --color-color-text: #e5e5e5;
+  --color-color-muted: #a3a3a3;
+  --color-color-border: #262626;
+
+  /* 2. Definimos las FUENTES */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  /* Aplicamos los estilos globales */
+  html {
+    /* Usamos las variables definidas arriba */
+    background-color: var(--color-color-bg);
+    color: var(--color-color-text);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    /* antialiased ya viene por defecto a veces, pero forzamos altura */
+    min-height: 100vh;
+  }
+
+  /* Títulos con fuente Serif */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.025em; /* tracking-tight */
+    color: white;
+  }
+}

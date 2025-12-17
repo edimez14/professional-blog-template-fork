@@ -1,0 +1,21 @@
+# --- Core Framework ---
+django
+djangorestframework
+
+# --- Conexión Frontend (Astro) ---
+django-cors-headers          # Vital: Permite peticiones desde el dominio de Astro
+djangorestframework-simplejwt # Auth: Estándar seguro para frontends desacoplados
+
+# --- Base de Datos & Configuración (Render/Neon) ---
+python-decouple              # Lectura de variables .env
+psycopg2-binary              # Driver de PostgreSQL
+dj-database-url              # Parsea la URL de la base de datos de Neon
+
+# --- Servidor & Estáticos en Producción ---
+gunicorn                     # Servidor WSGI para despliegue
+whitenoise                   # Sirve CSS/JS del Admin Panel en Render
+
+# --- Funcionalidades Blog ---
+Pillow                       # Manejo de imágenes (ImageField)
+django-filter                # Filtros avanzados en API (por categoría, fecha)
+drf-spectacular              # Genera Swagger/OpenAPI (útil para integrar en Astro)

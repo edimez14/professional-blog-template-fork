@@ -1,0 +1,60 @@
+---
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
+
+// 1. Definimos la interfaz para tipar estrictamente las props
+interface Props {
+  className?: string;
+  variant?: "light" | "outline" | "filled";
+  size?: "lg" | "md" | "sm";
+  textAlign?: "center" | "left" | "right";
+  bold?: boolean;
+}
+
+const {
+  className,
+  variant = "light",
+  size = "md",
+  textAlign = "right",
+  bold = false,
+} = Astro.props;
+
+const baseStyles = "leading-relaxed";
+
+// 2. Al tipar 'Props', TypeScript ya sabe que 'size' solo puede ser 'lg', 'md' o 'sm'
+const sizeStyles = {
+  lg: "text-lg md:text-xl",
+  md: "text-base md:text-lg",
+  sm: "text-sm md:text-base",
+};
+
+const textAlignStyles = {
+  center: "text-center",
+  left: "text-left",
+  right: "text-right",
+};
+
+const weight = bold ? "font-semibold" : "font-normal";
+
+const variantStyles = {
+  light: "text-color-text",
+  outline: "text-transparent [-webkit-text-stroke:0.8px_var(--color-gold)]",
+  filled:
+    "text-color-text [-webkit-text-stroke:0.4px_var(--color-gold)] px-1 inline-block",
+};
+
+const classes = twMerge(
+  clsx(
+    baseStyles,
+    sizeStyles[size],
+    textAlignStyles[textAlign],
+    weight,
+    variantStyles[variant],
+    className
+  )
+);
+---
+
+<p class={classes}>
+  <slot />
+</p>
