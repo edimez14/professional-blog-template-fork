@@ -46,7 +46,8 @@ DJANGO_APPS = [
 
 PROJECTS_APPS = [
     'apps.accounts',
-    
+    'apps.blog',
+    'apps.comments',
 ]
 
 THIRD_PARTY_APPS = [
@@ -55,13 +56,13 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
     # 'ckeditor',
     # 'ckeditor_uploader',
-    'coreapi',
     'rest_framework_simplejwt',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECTS_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,6 +128,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+AUTH_USER_MODEL = 'accounts.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
